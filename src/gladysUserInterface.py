@@ -45,11 +45,13 @@ def runTests():
 	print("====================================")
 	print("**Testing file load**")
 	print("====================================")
-	testValue = satellite.readSat("latitude", "/Users/frankbernal/Documents/GitHub/newGladysWestUpdates/src/JSONs")
-	if testValue != 0:
-		print("Satellite files loaded successfully!")
-	else:
-		print("Failure to load satellite files.")
+	filePath = "/Users/frankbernal/Documents/GitHub/newGladysWestUpdates/src/JSONs"
+	try:
+		testValue = satellite.readSat("latitude", filePath)
+	except IOError:
+		print("ERROR: Unable to open the file " + filePath)
+		raise IOError
+	print("Satellite files located successfully!")
 	
 	# Done testing
 	print()
