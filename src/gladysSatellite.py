@@ -39,7 +39,7 @@ def gpsValue(x, y, sat):
 		2)given x and y, outputs value based on whatever is saved in the JSON file
 	"""
 	pathToJSONDataFiles = "/Users/frankbernal/Documents/GitHub/newGladysWestUpdates/src/JSONs"
-
+	dataValue = 0
 	# read the satellite data
 	data = readSat(sat, pathToJSONDataFiles)
 
@@ -48,11 +48,22 @@ def gpsValue(x, y, sat):
 
 	#loop to assign JSON with classes
 	for elem in data:
-		x = elem["x"]
-		y = elem["y"]
+		xVal = elem["x"]
+		yVal = elem["y"]
 		value = elem["value"]
 
 	#finalizing value from x and y
-		satelitteDictionary[x,y] = value
+		satelitteDictionary[(xVal,yVal)] = value
+		
+		#find the key and return value
+		# if x or y is out of bounds throw error
+		if (x, y) in satelitteDictionary:
+			dataValue = satelitteDictionary[(x, y)]
+		else:
+			dataValue = "Error: NO DATA FOUND WITH THOSE VALUES"
 
-	return value
+	return dataValue
+#print(gpsValue(99, 45, "latitude"))
+#print(gpsValue(99, 46, "longitude"))
+#print(gpsValue(99, 46, "altitude"))
+#print(gpsValue(99, 46, "time"))

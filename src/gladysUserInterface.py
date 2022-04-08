@@ -5,7 +5,7 @@ import gladysSatellite as satellite
 import gladysUserLogin as userLogin
 
 """
-	Student: Frank Bernal
+	Student: Melissa Mattos
 	Module: gladysUserInterface
 	Description: This module acts as an interface for the user, with options to test,
 				 set current position, set destination, map distance, run tests and quit.
@@ -123,14 +123,14 @@ def runApp(userName):
 
 		# Set current position
 		elif firstChar == 'c':
-			currentX = input("Please enter value for x: ")
-			currentY = input("Please enter value for y: ")
+			currentX = input("Please enter value 0-99 for x: ")
+			currentY = input("Please enter value 0-99 for y: ")
 			
 
 		# Set destination position
 		elif firstChar == 'd':
-			destinationX = input("Please enter value for x: ")
-			destinationY = input("Please enter value for y: ")
+			destinationX = input("Please enter value 0-99 for x: ")
+			destinationY = input("Please enter value 0-99 for y: ")
 
 		# Map distance
 		elif firstChar == 'm':
