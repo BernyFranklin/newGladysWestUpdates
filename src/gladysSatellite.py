@@ -38,7 +38,7 @@ def gpsValue(x, y, sat):
 		1) creating a path for the readSat function to pull the right JSON file
 		2)given x and y, outputs value based on whatever is saved in the JSON file
 	"""
-	pathToJSONDataFiles = "C:\Users\d17hu\OneDrive\Documents\SJCC2022\Python\GitHub\SJCC2022Python\gladysProject\satelliteJSON"
+	pathToJSONDataFiles = "/Users/frankbernal/Documents/GitHub/newGladysWestUpdates/src/JSONs"
 
 	# read the satellite data
 	data = readSat(sat, pathToJSONDataFiles)
